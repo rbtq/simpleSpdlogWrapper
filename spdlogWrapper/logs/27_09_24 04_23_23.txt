@@ -1,0 +1,10 @@
+[16:23:23] [---I---] [thread 15136] Successfully started console logger
+[16:23:23] [---I---] [thread 15136] Successfully started file logger
+[16:23:23] [---T---] [thread 15136] Test 0
+[16:23:23] [---D---] [thread 15136] Test 1
+[16:23:23] [---I---] [thread 15136] Test 2
+[16:23:23] [---W---] [thread 15136] Test 3
+[16:23:23] [---E---] [thread 15136] Test 4
+[16:23:23] [---C---] [thread 15136] Test 5
+[16:23:23] [---I---] [thread 15136] Stopping console logger
+[16:23:23] [---I---] [thread 15136] Stopping file logger
