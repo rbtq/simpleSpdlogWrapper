@@ -12,7 +12,9 @@
     <ClInclude Include="include\Log.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="include\spdlog.h" />
+    <ClInclude Include="include\spdlog.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Log.cpp">
