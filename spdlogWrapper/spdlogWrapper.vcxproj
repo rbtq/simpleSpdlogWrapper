@@ -81,6 +81,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="include\Log.h" />
+    <ClInclude Include="include\spdlog.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Log.cpp" />
