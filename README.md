@@ -67,5 +67,5 @@ If you would like more features, raise an issue.
 
 By default the output directory for log files will be set to simpleSpdlogWrapper\spdlogWrapper\logs
 Therefore setting m_directory to "" will output log files to simpleSpdlogWrapper\spdlogWrapper
-"..\" will move the target directory to the parent directory
+"..\\" will move the target directory to the parent directory
     
