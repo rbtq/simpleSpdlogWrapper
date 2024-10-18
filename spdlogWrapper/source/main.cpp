@@ -5,6 +5,7 @@ int main() {
 	//init logger
 	rbtq::Log programLogger;
 
+
 	//run start function before logging
 	//start(consoleEnabled, fileEnabled, minimum console log level, minimum file log level)
 	/*
@@ -16,7 +17,7 @@ int main() {
     err = 4,
     critical = 5,
 	*/
-	programLogger.start(true, true, 0, 0);
+	programLogger.start(rbtq::LogSettings());
 
 	//do stuff
 	programLogger.trace("Test1");

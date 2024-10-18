@@ -80,7 +80,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\Log.h" />
+    <ClInclude Include="include\log.h" />
+    <ClInclude Include="include\logSettings.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp" />

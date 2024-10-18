@@ -3,16 +3,14 @@
 #include "spdlog/sinks/stdout_color_sinks.h"
 #include "spdlog/sinks/basic_file_sink.h"
 #include "spdlog/spdlog.h"
+#include "logSettings.h"
 
 namespace rbtq
 {
 	class Log
 	{
 	private: 
-		static short m_minConsoleLogLevel; //!<minimum log level for console output
-		static short m_minFileLogLevel; //!<minimum log level for file output
-		static bool m_consoleEnabled; //!<is the console logger enabled?
-		static bool m_fileEnabled; //!<is the file logger enabled?
+		static LogSettings s_settings; //!<settings for logger
 
 		static std::shared_ptr<spdlog::logger> s_consoleLogger; //!< Console logger
 		static std::shared_ptr<spdlog::logger> s_fileLogger; //!< File logger
@@ -27,7 +25,7 @@ namespace rbtq
 		void setupLogLevel(); //!<setup the log level
 
 	public:
-		void start(bool consoleEnabled, bool fileEnabled, short consoleLogLevel = 1, short fileLogLevel = 2); //!< Start the logger
+		void start(LogSettings settings); //!< Start the logger
 		void stop(); //!< Stop the logger
 
 		template<class ...Args>
@@ -128,14 +126,10 @@ namespace rbtq
 
 	std::shared_ptr<spdlog::logger> Log::s_consoleLogger = nullptr;
 	std::shared_ptr<spdlog::logger> Log::s_fileLogger = nullptr;
+	LogSettings Log::s_settings;
 
-	short Log::m_minConsoleLogLevel = 0; //!<minimum log level for console output
-	short Log::m_minFileLogLevel = 0; //!<minimum log level for file output
-	bool Log::m_consoleEnabled = false; //!<is the console logger enabled?
-	bool Log::m_fileEnabled = false; //!<is the file logger enabled?
-
-	bool Log::shouldConsoleLog(short logLevel) { return logLevel >= m_minConsoleLogLevel && m_consoleEnabled; }; //!<console log check
-	bool Log::shouldFileLog(short logLevel) { return logLevel >= m_minFileLogLevel && m_fileEnabled; }; //!<file log check
+	bool Log::shouldConsoleLog(short logLevel) { return logLevel >= s_settings.m_minConsoleLogLevel && s_settings.m_shouldConsoleLog; }; //!<console log check
+	bool Log::shouldFileLog(short logLevel) { return logLevel >= s_settings.m_minFileLogLevel && s_settings.m_shouldFileLog; }; //!<file log check
 
 
 	void Log::startFileLogger() { //!<try start the file logger
@@ -157,7 +151,7 @@ namespace rbtq
 		{
 			//disable logger and report error to user
 			s_fileLogger.reset();
-			m_fileEnabled = false;
+			s_settings.m_shouldFileLog = false;
 			Log::error("Could not start file logger: {0}", e.what());
 			return;
 		}
@@ -172,14 +166,14 @@ namespace rbtq
 
 		short logLevel;
 
-		if (m_fileEnabled && m_consoleEnabled) {
-			logLevel = std::fmin(m_minFileLogLevel, m_minConsoleLogLevel);
+		if (s_settings.m_shouldConsoleLog && s_settings.m_shouldFileLog) {
+			logLevel = std::fmin(s_settings.m_minFileLogLevel, s_settings.m_minConsoleLogLevel);
 		}
-		else if (m_fileEnabled) {
-			logLevel = m_minFileLogLevel;
+		else if (s_settings.m_shouldFileLog) {
+			logLevel = s_settings.m_minFileLogLevel;
 		}
-		else if (m_consoleEnabled) {
-			logLevel = m_minConsoleLogLevel;
+		else if (s_settings.m_shouldConsoleLog) {
+			logLevel = s_settings.m_minConsoleLogLevel;
 		}
 		else logLevel = 0;
 
@@ -194,22 +188,19 @@ namespace rbtq
 	}
 
 
-	void Log::start(bool consoleEnabled, bool fileEnabled, short consoleLogLevel, short fileLogLevel)
+	void Log::start(LogSettings settings)
 	{
 		//set values
-		m_consoleEnabled = consoleEnabled;
-		m_fileEnabled = fileEnabled;
-		m_minConsoleLogLevel = consoleLogLevel;
-		m_minFileLogLevel = fileLogLevel;
+		s_settings = settings;
 		//setup log level and start loggers if enabled
 		setupLogLevel();
-		if (m_consoleEnabled) startConsoleLogger();
-		if (m_fileEnabled) startFileLogger();
+		if (s_settings.m_shouldConsoleLog) startConsoleLogger();
+		if (s_settings.m_shouldFileLog) startFileLogger();
 
-		if (m_consoleEnabled) {
+		if (s_settings.m_shouldConsoleLog) {
 			Log::info("Successfully started console logger");
 		}
-		if (m_fileEnabled) {
+		if (s_settings.m_shouldFileLog) {
 			Log::info("Successfully started file logger");
 		}
 
@@ -218,15 +209,15 @@ namespace rbtq
 	void Log::stop()
 	{
 		//log final message
-		if (m_consoleEnabled) {
+		if (s_settings.m_shouldConsoleLog) {
 			Log::info("Stopping console logger");
 		}
-		if (m_fileEnabled) {
+		if (s_settings.m_shouldFileLog) {
 			Log::info("Stopping file logger");
 		}
 
 		//delete
-		if (m_consoleEnabled) s_consoleLogger.reset();
-		if (m_fileEnabled) s_fileLogger.reset();
+		if (s_settings.m_shouldConsoleLog) s_consoleLogger.reset();
+		if (s_settings.m_shouldFileLog) s_fileLogger.reset();
 	}
 }
