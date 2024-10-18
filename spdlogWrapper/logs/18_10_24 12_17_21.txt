@@ -1,0 +1,11 @@
+[12:17:21] [---I---] [thread 21112] Successfully started console logger
+[12:17:21] [---I---] [thread 21112] Successfully started file logger
+[12:17:21] [---T---] [thread 21112] Test1
+[12:17:21] [---T---] [thread 21112] Test 0 A
+[12:17:21] [---D---] [thread 21112] Test 1
+[12:17:21] [---I---] [thread 21112] Test 2
+[12:17:21] [---W---] [thread 21112] Test 3
+[12:17:21] [---E---] [thread 21112] Test 4 10
+[12:17:21] [---C---] [thread 21112] Test 10 5
+[12:17:21] [---I---] [thread 21112] Stopping console logger
+[12:17:21] [---I---] [thread 21112] Stopping file logger

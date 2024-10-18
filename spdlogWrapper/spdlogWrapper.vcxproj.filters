@@ -14,9 +14,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Log.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="source\main.cpp">
       <Filter>source</Filter>
     </ClCompile>
