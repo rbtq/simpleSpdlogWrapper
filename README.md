@@ -10,7 +10,8 @@ Quick start:
 #include "Log.h"
 
 int main() {
-	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
+	
+ 	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
 	rbtq::Log programLogger;
 
 	//run start function before logging, default constructor gives default settings
