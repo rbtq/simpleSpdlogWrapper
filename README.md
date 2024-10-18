@@ -4,23 +4,17 @@ https://github.com/gabime/spdlog - check the licence here before using, is free 
 
 If you would like more features, raise an issue.
 
-How to use - Sample program
+Quick start:
 
-	//init logger
-	rbtq::Log programLogger; - make sure to put this in a place that can be accessed across the program, like a config file.
+//include the header file
+#include "Log.h"
 
-	//run start function before logging
-	//start(consoleEnabled, fileEnabled, minimum console log level, minimum file log level)
-	/*
-	Log levels
-	trace = 0,
-    debug = 1,
-    info = 2,
-    warn = 3,
-    error = 4,
-    critical = 5,
-	*/
-	programLogger.start(true, true, 0, 0);
+int main() {
+	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
+	rbtq::Log programLogger;
+
+	//run start function before logging, default constructor gives default settings
+	programLogger.start(rbtq::LogSettings());
 
 	//do stuff
 	programLogger.trace("Test1");
@@ -33,3 +27,6 @@ How to use - Sample program
 
 	//run stop function after logging, cleanup
 	programLogger.stop();
+
+	return 0;
+}
