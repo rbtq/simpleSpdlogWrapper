@@ -31,3 +31,24 @@ int main() {
 
 	return 0;
 }
+
+Configuration Settings
+class LogSettings {
+	public:
+		bool m_shouldConsoleLog = true; //!<should log statements output to console
+		char m_minConsoleLogLevel = 1; //!<the minimum log level requirement for a maessage to be output to the console
+		bool m_shouldFileLog = false; //!<should log statements output to a file
+		char m_minFileLogLevel = 1; //!<the minimum log level requirement for a maessage to be output to a file
+};
+
+Log Levels
+    trace = 0,
+    debug = 1,
+    info = 2,
+    warn = 3,
+    err = 4,
+    critical = 5
+    
+Setting the minimum log level higher than a log level will disable it.
+e.g a minimum log level of 1 will mean trace messages will not be outputted
+    
