@@ -2,7 +2,11 @@
 A simple wrapper for SpdLog that is free to use.
 https://github.com/gabime/spdlog - check the licence here before using, is free to use in any way as of writing.
 
-If you would like more features, raise an issue.
+Premake5:
+Make sure to include the spdlog directory as well or it wont work
+![image](https://github.com/user-attachments/assets/d2d553d3-1a6e-4daf-bce7-3db947962d0d)
+
+
 
 Quick start:
 
@@ -57,4 +61,5 @@ Log Levels
     
 Setting the minimum log level higher than a log level will disable it.
 e.g a minimum log level of 1 will mean trace messages will not be outputted
+If you would like more features, raise an issue.
     
