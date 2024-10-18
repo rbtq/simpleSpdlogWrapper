@@ -49,7 +49,7 @@ class LogSettings {
 		
   char m_minFileLogLevel = 1; //!<the minimum log level requirement for a maessage to be output to a file
 
-  std::string m_directory = "logs/"; //!<the directory that the log files will be outputted to
+  char m_directory[256] = "logs/"; //!<the directory that the log files will be outputted to
   
 };
 
