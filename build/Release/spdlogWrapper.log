@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\Denied\source\repos\simpleSpdlogWrapper\spdlogWrapper\include\Log.h(143,64): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Denied\source\repos\simpleSpdlogWrapper\spdlogWrapper\include\Log.h(142,64): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\Denied\source\repos\simpleSpdlogWrapper\spdlogWrapper\include\Log.h(170,24): warning C4244: '=': conversion from 'double' to 'short', possible loss of data
   spdlogWrapper.vcxproj -> C:\Users\Denied\source\repos\simpleSpdlogWrapper\bin\spdlogWrapper.exe

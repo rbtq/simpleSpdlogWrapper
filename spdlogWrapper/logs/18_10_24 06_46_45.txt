@@ -1,0 +1,9 @@
+[18:46:45] [---I---] [thread 19544] Successfully started console logger
+[18:46:45] [---I---] [thread 19544] Successfully started file logger
+[18:46:45] [---D---] [thread 19544] Test 1
+[18:46:45] [---I---] [thread 19544] Test 2
+[18:46:45] [---W---] [thread 19544] Test 3
+[18:46:45] [---E---] [thread 19544] Test 4 10
+[18:46:45] [---C---] [thread 19544] Test 10 5
+[18:46:45] [---I---] [thread 19544] Stopping console logger
+[18:46:45] [---I---] [thread 19544] Stopping file logger

@@ -133,8 +133,7 @@ namespace rbtq
 
 
 	void Log::startFileLogger() { //!<try start the file logger
-
-		char filepath[256] = "logs/"; //path of the log files
+		char filepath[256] = ""; //path of the log files
 		char time[128]; //!<time when it was created
 		try
 		{
@@ -142,6 +141,7 @@ namespace rbtq
 			std::time_t t = std::time(nullptr);
 			std::strftime(time, sizeof(time), "%d_%m_%y %I_%M_%S", std::localtime(&t));
 
+			strcat_s(filepath, s_settings.m_directory);
 			strcat_s(filepath, time);
 			strcat_s(filepath, ".txt");
 

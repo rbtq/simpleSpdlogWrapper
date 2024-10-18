@@ -1,22 +1,12 @@
-
+/**\file main.cpp*/
+//include the header file
 #include "Log.h"
 
 int main() {
-	//init logger
+	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
 	rbtq::Log programLogger;
 
-
-	//run start function before logging
-	//start(consoleEnabled, fileEnabled, minimum console log level, minimum file log level)
-	/*
-	Log levels
-	trace = 0,
-    debug = 1,
-    info = 2,
-    warn = 3,
-    err = 4,
-    critical = 5,
-	*/
+	//run start function before logging, default constructor gives default settings
 	programLogger.start(rbtq::LogSettings());
 
 	//do stuff
