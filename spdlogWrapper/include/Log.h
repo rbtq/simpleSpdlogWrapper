@@ -158,7 +158,6 @@ namespace rbtq
 	}
 
 	void Log::startConsoleLogger() {
-		spdlog::set_pattern("[%H:%M:%S] [%^---%L---%$] [thread %t] %v");
 		s_consoleLogger = spdlog::stdout_color_mt("Console");
 	}
 
@@ -196,6 +195,8 @@ namespace rbtq
 		setupLogLevel();
 		if (s_settings.m_shouldConsoleLog) startConsoleLogger();
 		if (s_settings.m_shouldFileLog) startFileLogger();
+
+		spdlog::set_pattern(settings.m_pattern);
 
 		if (s_settings.m_shouldConsoleLog) {
 			Log::info("Successfully started console logger");
