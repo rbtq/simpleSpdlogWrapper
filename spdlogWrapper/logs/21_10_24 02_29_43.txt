@@ -1,0 +1,9 @@
+[14:29:43] [---I---] [thread 17040] Successfully started console logger
+[14:29:43] [---I---] [thread 17040] Successfully started file logger
+[14:29:43] [---D---] [thread 17040] Test 1
+[14:29:43] [---I---] [thread 17040] Test 2
+[14:29:43] [---W---] [thread 17040] Test 3
+[14:29:43] [---E---] [thread 17040] Test 4 10
+[14:29:43] [---C---] [thread 17040] Test 10 5
+[14:29:43] [---I---] [thread 17040] Stopping console logger
+[14:29:43] [---I---] [thread 17040] Stopping file logger

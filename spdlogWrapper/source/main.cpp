@@ -4,10 +4,10 @@
 
 int main() {
 	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
-	rbtq::Log programLogger;
+	ssw::Log programLogger;
 
 	//run start function before logging, default constructor gives default settings
-	programLogger.start(rbtq::LogSettings());
+	programLogger.start(ssw::LogSettings());
 
 	//do stuff
 	programLogger.trace("Test1");

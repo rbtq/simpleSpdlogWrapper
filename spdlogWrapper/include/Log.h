@@ -5,7 +5,7 @@
 #include "spdlog/spdlog.h"
 #include "logSettings.h"
 
-namespace rbtq
+namespace ssw
 {
 	class Log
 	{
@@ -218,7 +218,7 @@ namespace rbtq
 		}
 
 		//delete
-		if (s_settings.m_shouldConsoleLog) s_consoleLogger.reset();
-		if (s_settings.m_shouldFileLog) s_fileLogger.reset();
+		s_consoleLogger.reset();
+		s_fileLogger.reset();
 	}
 }

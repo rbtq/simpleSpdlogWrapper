@@ -1,0 +1,9 @@
+[14:27:09] [---I---] [thread 2056] Successfully started console logger
+[14:27:09] [---I---] [thread 2056] Successfully started file logger
+[14:27:09] [---D---] [thread 2056] Test 1
+[14:27:09] [---I---] [thread 2056] Test 2
+[14:27:09] [---W---] [thread 2056] Test 3
+[14:27:09] [---E---] [thread 2056] Test 4 10
+[14:27:09] [---C---] [thread 2056] Test 10 5
+[14:27:09] [---I---] [thread 2056] Stopping console logger
+[14:27:09] [---I---] [thread 2056] Stopping file logger

@@ -1,0 +1,9 @@
+[14:29:52] [---I---] Successfully started console logger
+[14:29:52] [---I---] Successfully started file logger
+[14:29:52] [---D---] Test 1
+[14:29:52] [---I---] Test 2
+[14:29:52] [---W---] Test 3
+[14:29:52] [---E---] Test 4 10
+[14:29:52] [---C---] Test 10 5
+[14:29:52] [---I---] Stopping console logger
+[14:29:52] [---I---] Stopping file logger
