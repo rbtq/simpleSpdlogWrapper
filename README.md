@@ -13,13 +13,16 @@ Quick start:
 //include the header file
 #include "Log.h"
 
+/**\file main.cpp*/
+//include the header file
+#include "Log.h"
+
 int main() {
-	
- 	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
-	rbtq::Log programLogger;
+	//init logger - put this in a place that can be accessed across the entire program and will last for the duration of the program
+	ssw::Log programLogger;
 
 	//run start function before logging, default constructor gives default settings
-	programLogger.start(rbtq::LogSettings());
+	programLogger.start(ssw::LogSettings());
 
 	//do stuff
 	programLogger.trace("Test1");
@@ -38,19 +41,13 @@ int main() {
 
 Configuration Settings
 class LogSettings {
-	
- public:
-		
-  bool m_shouldConsoleLog = true; //!<should log statements output to console
-		
-  char m_minConsoleLogLevel = 1; //!<the minimum log level requirement for a maessage to be output to the console
-		
-  bool m_shouldFileLog = false; //!<should log statements output to a file
-		
-  char m_minFileLogLevel = 1; //!<the minimum log level requirement for a maessage to be output to a file
-
-  char m_directory[256] = "logs/"; //!<the directory that the log files will be outputted to
-  
+	public:
+		bool m_shouldConsoleLog = true; //!<should log statements output to console
+		char m_minConsoleLogLevel = 0; //!<the minimum log level requirement for a maessage to be output to the console
+		bool m_shouldFileLog = true; //!<should log statements output to a file
+		char m_minFileLogLevel = 0; //!<the minimum log level requirement for a maessage to be output to a file
+		char m_directory[256] = "logs/"; //!<the directory that the log files will be outputted to
+		std::string m_pattern = "[%H:%M:%S] [%^---%L---%$] %v"; //!<the pattern for log messages
 };
 
 Log Levels
