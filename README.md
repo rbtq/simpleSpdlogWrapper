@@ -41,6 +41,7 @@ int main() {
 
 Configuration Settings
 class LogSettings {
+
 	public:
 		bool m_shouldConsoleLog = true; //!<should log statements output to console
 		char m_minConsoleLogLevel = 0; //!<the minimum log level requirement for a maessage to be output to the console
