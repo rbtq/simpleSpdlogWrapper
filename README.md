@@ -40,6 +40,7 @@ int main() {
 }
 
 Configuration Settings
+
 class LogSettings {
 
 	public:
